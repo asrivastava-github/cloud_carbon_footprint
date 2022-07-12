@@ -1,8 +1,9 @@
 environment         = "dev"
 prefix              = "ccf-aabg"
-ami_id              = "ami-0d71ea30463e0ff8d"
+app_ami_id          = "ami-0d71ea30463e0ff8d"
+web_ami_id          = "ami-00c920ab6ef8925b9"
 instance_type       = "t2.medium"
 key_name            = "ccf-aabg-kp"
 application         = "cloud-carbon-footprint"
-allowed_cidr_blocks = ["0.0.0.0/0"]
+allowed_cidr_blocks = ["82.69.40.93/32", "217.45.77.68/32"]
 bucket_functions    = ["billing", "athena"]
