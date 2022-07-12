@@ -59,30 +59,6 @@ resource "aws_security_group" "app_ccf_instance_sg" {
   }
 }
 
-resource "aws_network_acl_rule" "ccf_nacl_rule_rdp" {
-  count          = length(var.allowed_cidr_blocks)
-  network_acl_id = var.network_acl_id
-  rule_number    = 90 - count.index
-  egress         = false
-  protocol       = "tcp"
-  rule_action    = "allow"
-  cidr_block     = var.allowed_cidr_blocks[count.index]
-  from_port      = 3389
-  to_port        = 3389
-}
-
-resource "aws_network_acl_rule" "ccf_nacl_rule_http" {
-  count          = length(var.allowed_cidr_blocks)
-  network_acl_id = var.network_acl_id
-  rule_number    = 80 - count.index
-  egress         = false
-  protocol       = "tcp"
-  rule_action    = "allow"
-  cidr_block     = var.allowed_cidr_blocks[count.index]
-  from_port      = 80
-  to_port        = 80
-}
-
 resource "aws_iam_instance_profile" "ccf_instance_profile" {
   name = "ccf-instance-profile"
   role = aws_iam_role.ccf_api_role.name
