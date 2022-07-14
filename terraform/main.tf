@@ -45,9 +45,11 @@ module "ccf" {
   # Networking
   vpc_id           = module.vpc.vpc_id
   target_subnet_id = module.vpc.public_subnets[0]
+  network_acl_id   = module.vpc.default_network_acl_id
 
   # EC2
-  ami_id              = var.ami_id
+  web_ami_id          = var.web_ami_id
+  app_ami_id          = var.app_ami_id
   instance_type       = var.instance_type
   key_name            = var.key_name
   application         = var.application
@@ -61,4 +63,5 @@ module "ccf" {
   tags = local.tags
 
 }
+
 

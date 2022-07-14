@@ -27,7 +27,7 @@ sed -i 's/your-target-account-role-name (e.g. ccf-app)/ccf-aabg-api-role/g' .env
 sed -i 's/your-athena-db-name/<YOUR-ATHENA-DB-NAME>/g' .env
 sed -i 's/your-athena-db-table/<YOUR-ATHENA-DB-TABLE>/g' .env
 sed -i 's/your-athena-region/eu-west-1/g' .env
-sed -i 's/your-athena-query-results-location/ccf-aabg-t1-athena>/g' .env
+sed -i 's/your-athena-query-results-location/<ccf-aabg-t1-athena>/g' .env
 sed -i 's/your-billing-account-id/732372734688/g' .env
 sed -i 's/your-billing-account-name/732372734688/g' .env
 sed -i 's/=default/=IAM/g' .env
