@@ -13,9 +13,19 @@ variable "vpc_id" {
   default = "YOUR-VPC-ID"
 }
 
-variable "ami_id" {
+variable "network_acl_id" {
+  type    = string
+  default = "YOUR-NACL-ID"
+}
+
+variable "app_ami_id" {
   type    = string
   default = "ami-05cd35b907b4ffe77" # Amazon Linux AMI 2. This changes based on your AWS region.
+}
+
+variable "web_ami_id" {
+  type    = string
+  default = "ami-0a4722105d5286695"
 }
 
 variable "instance_type" {
